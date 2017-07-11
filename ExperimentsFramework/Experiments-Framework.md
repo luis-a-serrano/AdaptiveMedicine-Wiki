@@ -15,7 +15,7 @@ The main programming language used for Service Fabric is C#, a multi-paradigm la
 ## Implementation
 The following is a rough diagram of how the actors pattern is used on the Experiments Framework.
 
-| ![ExperimentsFrameworkActorPattern](Picture) |
+| ![ExperimentsFrameworkActorPattern](images/ExperimentsFrameworkActorPattern.png) |
 | --- |
 | A box with round corners represents an *actor type*, while a circle represents an *actor instance* (or simply *actor*/*instance*). All instances from the same type share the same code, however each one has their own state (and thus can behave differently). Each arrow represents a *message* being sent between actors and the color gives a hint of the context. Blue arrows are tied to a particular experiment, red arrows are tied to a particular participant, and yellow arrows are tied to both a particular experiment and participant. For convenience, all the actors tied to the same experiment and participant are grouped on the diagram inside a box with dotted outline. This grouping will repeat indefinitely for each participant added to an experiment. |
 
