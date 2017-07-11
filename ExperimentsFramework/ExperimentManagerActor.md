@@ -1,4 +1,4 @@
-Experiment Manager Actor
+ExperimentManagerActor
 ------------------------
 The *Experiment Manager* actor type defines a class that takes care of the configuration details for an experiment as well as providing an access point to all the other actor instances related to an experiment. Therefore, this actor is the gatekeeper of the whole experiment and the only one that directly acts upon the experiment as a result of human interaction. Each actor instance from this type manages a different experiment, and each experiment is independent and isolated from the others.
 

@@ -1,6 +1,6 @@
-Statechart Actor
+StatechartActor
 ----------------
-The Statechart Actor is a library that define classes that can be used to add statechart capabilities to a actors. It allows any actor that implements it to specify a statechart structure by defining states and transitions. With those in place it can then dispatch events to execute actions and change states.
+The *Statechart Actor* is a library that define classes that can be used to add statechart capabilities to a actors. It allows any actor that implements it to specify a statechart structure by defining states and transitions. With those in place it can then dispatch events to execute actions and change states.
 
 ### StatechartActor Class
 In order for an actor type to have statechart capabilities it needs to derive from the `StatechartActor` abstract class instead of the typical `Actor` class. Then by defining nested classes it can describe the structure of the statechart. These classes will derive from the `StatechartClass` abstract class and will use the `InitialStateAttribute`, `StateAttribute` and `TransitionAttribute` attributes extensively. During the creation of an actor type object said attributes might be read in order to construct the whole structure, which in turn might be used by multiple actor instances. Therefore, when defining the structure we assume that it's not tied to a specific instance. Instead, a reference to an instance will be passed to the appropriate state or transition when necessary.
