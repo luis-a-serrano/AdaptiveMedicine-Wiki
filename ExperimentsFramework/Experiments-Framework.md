@@ -1,5 +1,3 @@
-Experiments Framework
----------------------
 The Experiments Framework is a framework as a service (FaaS) that uses digital signal processing models on a data object that is periodically producing new signals. These signals are consumed by multiple adaptive filters with potentially different configurations. Each adaptive filter can differ from the others with regards to the employed algorithm or the order of the model. The set of adaptive filters is repeated for each data object since they are exclusive to a data object. Because of that, adaptive filters from data objects that are *similar* might decide to cooperate with each other. During cooperation they share their values for the parameters used on the adaptive algorithm and take into consideration the values from their neighbors. Then the updated parameters are used to make predictions for upcoming signals. These predictions can be used in many ways, of particular interest is for control systems that act upon the data object in order to influence the signals obtained from them.
 
 ## Technologies
