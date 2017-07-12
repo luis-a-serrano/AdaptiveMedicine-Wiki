@@ -3,7 +3,7 @@ The *Model Manager* actor type defines a class that creates and takes care of a 
 ### Statechart Backbone
 The following is a statechart diagram that describes the core behavior of an instance of the *Model Manager* actor type.
 
-| Image |
+| ![Model Manager Actor Statechart](images/ModelManagerActorStatechart.png) |
 | --- |
 | Some transitions have multiple events tied to them. This only applies if the action related to the transition is the same for all the events listed. Otherwise, the transitions would be presented as separate ones. |
 

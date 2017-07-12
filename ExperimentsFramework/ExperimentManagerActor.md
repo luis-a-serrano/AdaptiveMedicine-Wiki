@@ -3,7 +3,7 @@ The *Experiment Manager* actor type defines a class that takes care of the confi
 ### Statechart Backbone
 The following is a statechart diagram that describes the core behavior of an instance of the *Experiment Manager* actor type.
 
-| Image |
+| ![Experiment Manager Actor Statechart](images/ExperimentManagerActorStatechart.png) |
 | --- |
 | Some transitions have multiple events tied to them. This only applies if the action related to the transition is the same for all the events listed. Otherwise, the transitions would be presented as separate ones. |
 
