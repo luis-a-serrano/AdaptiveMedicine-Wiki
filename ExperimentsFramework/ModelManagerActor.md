@@ -18,8 +18,8 @@ An *Initialize* event is necessary to move the statechart to the *Initialized* s
 ##### Delete Event
 A *Delete* event tells the statechart instance to remove the saved references, forcing it to be at an *Uninitialized* state.
 
-##### Error Event
-An *Error* event always make the instance move to the *Illegal* state as it is produced, for the most past, when a problem arises during the processing of an action.
+##### Error and Reset Events
+An *Error* event always make the instance move to the *Illegal* state as it is produced, for the most past, when a problem arises during the processing of an action. The *Reset* event has only meaning when moving out of the *Illegal* state and into the initial state.
 
 #### Initialized State
 This state implies that the model references produced by a previous *Initialize* event were stored, and therefore the instance is now ready to process requests that make use of said information.
@@ -27,11 +27,11 @@ This state implies that the model references produced by a previous *Initialize*
 ##### Delete Event
 A *Delete* event tells the statechart instance to remove the saved model references, forcing it to be at an *Uninitialized* state.
 
-##### Initialize and Error Events
-An *Initialize* event only make sense if the statechart doesn't have any model references saved for this instance. Therefore, if it does then the statechart moves to the *Illegal* state. An *Error* event always make the instance move to the *Illegal* state as it is produced, for the most past, when a problem arises during the processing of an action.
+##### Initialize, Error and Reset Events
+An *Initialize* event only make sense if the statechart doesn't have any model references saved for this instance. Therefore, if it does then the statechart moves to the *Illegal* state. An *Error* event always make the instance move to the *Illegal* state as it is produced, for the most past, when a problem arises during the processing of an action. The *Reset* event has only meaning when moving out of the *Illegal* state and into the initial state.
 
 #### Illegal State
-This state implies that an error occurred during the processing of a transition action, which might further imply that at some point there was a problem during the path traversal of the instance. In order for the statechart to be "legal" again it would need to transition to the initial state before processing any new event. Thus, for any event dispatched while the instance is on this state it simply forwards it to the initial state.
+This state implies that an error occurred during the processing of a transition action, which might further imply that at some point there was a problem during the path traversal of the instance. In order for the statechart to be "legal" again it would need to transition to the initial state before processing any new event. Thus, for any event dispatched while the instance is on this state it simply moves to the initial state.
 
 ### Actor Language
 The *Model Manager* actor type is realized by `ModelManagerActor`. The class implements the `IModelManagerActor` interface which exposes the `ConfigurateAsync` method. This method is used to setup all the details related to the models. This creates and dispatches an *Initialize* event on the statechart backbone. This method is mostly used by the API gateway instead of by other actors.
